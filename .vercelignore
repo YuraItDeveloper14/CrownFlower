@@ -1,0 +1,6 @@
+release
+dist
+node_modules
+electron
+*.exe
+.git

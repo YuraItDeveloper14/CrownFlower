@@ -1,0 +1,19 @@
+{
+  "name": "CROWNFLOWER — Premium Caps",
+  "short_name": "CROWNFLOWER",
+  "description": "Premium headwear, crafted to outlast trends. Wear your crown.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f6f4",
+  "theme_color": "#f6f6f4",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

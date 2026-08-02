@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-stone-700 font-sans antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(184, 134, 11, 0.22);
+  color: #1c1917;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eeeeec;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d6d3d1, #a8a29e);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8860b;
+}
+
+@layer components {
+  /* Frosted panel on the soft porcelain surface */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-stone-200/80 shadow-sm;
+  }
+
+  /* Classic boutique CTA: charcoal on cream */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-paper
+      bg-stone-900
+      shadow-[0_8px_24px_rgba(28,25,23,0.18)]
+      transition-all duration-300 hover:bg-stone-800 hover:shadow-[0_12px_34px_rgba(28,25,23,0.28)] hover:-translate-y-0.5
+      active:translate-y-0 active:scale-[0.97];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-stone-800
+      border border-stone-300 bg-white/40 transition-all duration-300
+      hover:bg-white hover:border-gold/60 hover:-translate-y-0.5 active:scale-[0.97];
+  }
+
+  .eyebrow {
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.28em] text-gold;
+  }
+}
+
+/* Animated gold border for cards */
+.glow-border {
+  position: relative;
+}
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(130deg, rgba(184, 134, 11, 0.55), rgba(224, 184, 77, 0.4), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+/* Hand-drawn underline accent (a human, off-the-grid touch) */
+.ink-underline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='12' viewBox='0 0 200 12'%3E%3Cpath d='M2 8 C40 3 70 10 100 6 C140 1 170 9 198 5' stroke='%23b8860b' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 100% 0.5em;
+  padding-bottom: 0.15em;
+}
