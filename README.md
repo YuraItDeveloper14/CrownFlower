@@ -1,5 +1,8 @@
 # CROWNFLOWER
 
+<!-- badges -->
+[![License](https://img.shields.io/github/license/YuraItDeveloper14/CrownFlower?color=blue)](LICENSE) [![Last commit](https://img.shields.io/github/last-commit/YuraItDeveloper14/CrownFlower)](https://github.com/YuraItDeveloper14/CrownFlower/commits)
+
 Storefront for a premium cap brand — built as a full shopping flow, not a landing page.
 
 **Live:** [crownflower.vercel.app](https://crownflower.vercel.app)
