@@ -50,6 +50,12 @@ src/
 electron/      desktop shell
 ```
 
+## Tests
+
+- `node --test` checks the catalogue: unique slugs, prices, colours, colorways.
+- `npm run build`, then `SITE_DIR=dist python -m pytest -q tests` opens the built site
+  in Chromium and checks that it renders without script errors, also while scrolling.
+
 ## Licence
 
 MIT — see [LICENSE](LICENSE).

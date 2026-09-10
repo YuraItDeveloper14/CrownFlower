@@ -20,3 +20,20 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+
+      - name: Catalogue tests
+        run: node --test
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pytest and a browser
+        run: |
+          pip install pytest playwright==1.48.0
+          python -m playwright install --with-deps chromium
+
+      - name: Smoke test of the built site
+        env:
+          SITE_DIR: dist
+        run: python -m pytest -q tests
